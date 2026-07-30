@@ -31,7 +31,7 @@ export function NoteList({ notes }: NoteListProps) {
             <button
               disabled={mutation.isPending}
               className={css.button}
-              onClick={() => mutation.mutate({ id: note.id })}
+              onClick={() => mutation.mutate(note.id)}
             >
               Delete
             </button>

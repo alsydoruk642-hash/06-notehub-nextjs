@@ -16,9 +16,7 @@ interface CreateNoteParams {
   content: string;
   tag: NoteTag;
 }
-interface DeleteNoteParams {
-  id: string;
-}
+
 const NEXT_PUBLIC_NOTEHUB_TOKEN = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
 axios.defaults.baseURL = 'https://notehub-public.goit.study/api/';
 axios.defaults.headers.common['Authorization'] =
@@ -40,7 +38,7 @@ export async function createNote({ title, content, tag }: CreateNoteParams) {
   return response.data;
 }
 
-export async function deleteNote({ id }: DeleteNoteParams) {
+export async function deleteNote(id: string): Promise<Note> {
   const response = await axios.delete<Note>(`/notes/${id}`);
   return response.data;
 }
