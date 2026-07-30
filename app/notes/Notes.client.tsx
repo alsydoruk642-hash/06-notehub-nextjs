@@ -11,7 +11,7 @@ import { NoteForm } from '@/components/NoteForm/NoteForm';
 import { SearchBox } from '@/components/SearchBox/SearchBox';
 import { useDebouncedCallback } from 'use-debounce';
 
-export default function App() {
+export default function NotesClient() {
   const [page, setPage] = useState(1);
   const [modal, setModal] = useState(false);
   const [searchValue, setSearchValue] = useState('');
